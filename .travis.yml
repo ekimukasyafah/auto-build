@@ -1,0 +1,7 @@
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: $TRAVIS_BUILD_DIR/make deploy production $TRAVIS_TAG
+    on:
+        tags: true
+        condition: "$TRAVIS_TAG =~ -release$"
